@@ -18,5 +18,5 @@ Seuraavat työkalut asennettiin onnistuneesti, ja niiden pitäisi näkyä `pip f
 ### **Saatu tulos**
 Alla on kuvankaappaus onnistuneesta asennuksesta:  
 
-![Asennustulokset](images/asennus.png)
+![Asennustulokset](./Images/asennus.png)
 
