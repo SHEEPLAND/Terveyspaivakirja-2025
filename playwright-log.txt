@@ -1,0 +1,42 @@
+(node:13442) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2025-03-28T20:13:01.306Z","pid":13442,"hostname":"MACBOOK.local","msg":"Listening on 59594"}
+{"level":30,"time":"2025-03-28T20:13:02.439Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2025-03-28T20:13:03.719Z","pid":13442,"hostname":"MACBOOK.local","msg":"Adding browser to stack: chromium, version: 134.0.6998.35"}
+{"level":30,"time":"2025-03-28T20:13:03.721Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method newBrowser"}
+{"level":30,"time":"2025-03-28T20:13:03.721Z","pid":13442,"hostname":"MACBOOK.local","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2025-03-28T20:13:03.768Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method newPage"}
+{"level":30,"time":"2025-03-28T20:13:03.768Z","pid":13442,"hostname":"MACBOOK.local","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2025-03-28T20:13:04.109Z","pid":13442,"hostname":"MACBOOK.local","msg":"Changed active context"}
+{"level":30,"time":"2025-03-28T20:13:06.286Z","pid":13442,"hostname":"MACBOOK.local","msg":"Video path: undefined"}
+{"level":30,"time":"2025-03-28T20:13:06.286Z","pid":13442,"hostname":"MACBOOK.local","msg":"Changed active page"}
+{"level":30,"time":"2025-03-28T20:13:06.817Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method newPage"}
+{"level":30,"time":"2025-03-28T20:13:06.862Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:06.864Z","pid":13442,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=entry_date in page."}
+{"level":30,"time":"2025-03-28T20:13:07.094Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.100Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.100Z","pid":13442,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=mood in page."}
+{"level":30,"time":"2025-03-28T20:13:07.186Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.195Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.195Z","pid":13442,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=energy_level in page."}
+{"level":30,"time":"2025-03-28T20:13:07.247Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.253Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.253Z","pid":13442,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=stress_level in page."}
+{"level":30,"time":"2025-03-28T20:13:07.305Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.312Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.312Z","pid":13442,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=sleep_hours in page."}
+{"level":30,"time":"2025-03-28T20:13:07.335Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.340Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.340Z","pid":13442,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=notes in page."}
+{"level":30,"time":"2025-03-28T20:13:07.480Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.485Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.485Z","pid":13442,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=goals in page."}
+{"level":30,"time":"2025-03-28T20:13:07.601Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method typeText"}
+{"level":30,"time":"2025-03-28T20:13:07.609Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method click"}
+{"level":30,"time":"2025-03-28T20:13:07.609Z","pid":13442,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with css=input.createEntry in page."}
+{"level":30,"time":"2025-03-28T20:13:07.837Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method click"}
+{"level":30,"time":"2025-03-28T20:13:09.852Z","pid":13442,"hostname":"MACBOOK.local","msg":"Start of node method getText"}
+{"level":30,"time":"2025-03-28T20:13:09.853Z","pid":13442,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with css=h2 in page."}
+{"level":30,"time":"2025-03-28T20:13:09.886Z","pid":13442,"hostname":"MACBOOK.local","msg":"Retrieved text for element css=h2 containing Your Diary Summary"}
+{"level":30,"time":"2025-03-28T20:13:09.886Z","pid":13442,"hostname":"MACBOOK.local","msg":"End of node method getText"}
+{"level":30,"time":"2025-03-28T20:13:13.289Z","pid":13442,"hostname":"MACBOOK.local","msg":"Removed page=a9feb269-c460-4545-80af-d22abb99baba from context=9b6cefaf-3a4e-4c9d-8a99-f5718bb01c62 page stack"}
