@@ -1,12 +1,18 @@
 .venv
-
+.env
 __pycache__/
 *.pyc
 
-output.xml
+
+!outputs/log.html
+!outputs/report.html
+!outputs/output.xml
+
+
 log.html
 report.html
-*.log
+output.xml
 
 .DS_Store
 Thumbs.db
+

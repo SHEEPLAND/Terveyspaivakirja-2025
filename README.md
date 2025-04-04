@@ -133,5 +133,51 @@ Testi meni läpi onnistuneesti ja yhteenvetopopup ilmestyi:
 
 ---
 
+# Tehtävä 5: Ympäristömuuttujien (.env) käyttö kirjautumistestissä
+
+Tässä tehtävässä toteutettiin kirjautumistesti, jossa käyttäjätunnus ja salasana haettiin .env-tiedostosta ja tehtävä suoretettiin seuraavien ohjeiden mukaisesti:  
+- 🔗 [GitHub: 03. Tietojen salaus ja piilottaminen](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/01_asennukset.md)
+
+## Tavoitteet
+- Tavoitteena on parantaa tietoturvaa
+- Piilottaa arkaluontoiset tiedot, kuten käyttäjätunnuksen ja salasanan.
+- Ladata tiedot .env-tiedostosta python-dotenv-kirjaston avulla
+- Hyödyntää arvoja Robot Framework -testissä.
+
+
+## Toteus
+`.env`-tiedosto sijoitettiin hakemistoon `Diary-BE-2025-main/.env` jatTiedostossa määriteltiin seuraavat muuttujat:
+
+```python
+import os
+from dotenv import load_dotenv
+
+load_dotenv(dotenv_path="Diary-BE-2025-main/.env")
+
+USERNAME = os.getenv("USERNAME")
+PASSWORD = os.getenv("PASSWORD")
+BASE_URL = os.getenv("BASE_URL")
+```
+Robot Framework -testissä käytettiin näitä muuttujia:
+
+```python
+Variables   ../load_env.py
+
+Type Text     id=login-username    ${USERNAME}
+Type Secret   id=login-pass        $PASSWORD
+```
+
+Testi suoritettiin komennolla:
+```robot
+robot -d outputs tests/login-test.robot
+```
+
+## Lopputulos
+Testi suoritettu onnistuneesti. Käyttäjätunnus ja salasana haettiin `.env` -tiedostosta.
+
+
+
+
+
 ## Tekoälyn käyttö
 Tekoälyä on käytetty tässä tehtävässä mahdollisten virheiden tunnistamiseen ja korjaamiseen.
