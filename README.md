@@ -139,8 +139,6 @@ Tässä tehtävässä toteutettiin kirjautumistesti, jossa käyttäjätunnus ja 
 - Piilottaa arkaluontoiset tiedot, kuten käyttäjätunnuksen ja salasanan.
 - Ladata tiedot `.env`-tiedostosta `python-dotenv`-kirjaston avulla
 - Hyödyntää arvoja Robot Framework -testissä.
-  
-https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html
 
 
 ## Toteus
@@ -180,8 +178,8 @@ robot -d outputs tests/login-test.robot
 
 ## Lopputulos
 Testi suoritettu onnistuneesti. Käyttäjätunnus ja salasana haettiin `.env` -tiedostosta, eikä tietoja kirjoitettu suoraan testikoodiin..
-- [Testiloki](http://127.0.0.1:3001/outputs/log.html)
-- [Testiraportti](http://127.0.0.1:3001/outputs/report.html)
+- [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
+- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 
 # Tehtävä 6: Tietojen salaaminen CryptoLibraryn avulla
@@ -236,8 +234,8 @@ Testi suoritettu onnistuneesti.
 - Salatut muuttujat alkoivat muodossa crypt:...
 - Lokitiedoston tiedot näkyvät muodossa ***, eikä arkaluonteisia tietoja ole vuotanut.
 
-- [Testiloki](http://127.0.0.1:3001/outputs/log.html)
-- [Testiraportti](http://127.0.0.1:3001/outputs/report.html)
+- [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
+- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 
 
