@@ -139,6 +139,8 @@ Tässä tehtävässä toteutettiin kirjautumistesti, jossa käyttäjätunnus ja 
 - Piilottaa arkaluontoiset tiedot, kuten käyttäjätunnuksen ja salasanan.
 - Ladata tiedot `.env`-tiedostosta `python-dotenv`-kirjaston avulla
 - Hyödyntää arvoja Robot Framework -testissä.
+  
+https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html
 
 
 ## Toteus
