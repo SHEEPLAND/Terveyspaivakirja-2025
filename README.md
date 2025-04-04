@@ -110,7 +110,7 @@ Tässä tehtävässä automatisoitiin sovelluksen lomake, jolla käyttäjä lis�
 
 - `resources/entry_data.robot` – muuttujat syötettävistä kentistä
 - `tests/new-entry-test.robot` – testi päiväkirjamerkinnän tekemiseksi
-
+  
 ---
 
 ## Tulokset
@@ -149,6 +149,7 @@ USERNAME= username
 PASSWORD=password
 BASE_URL=http://127.0.0.1:3001/Diary-FE-2025-main/vite-project/src/html
 ```
+
 Muuttujat ladattiin load_env.py-tiedoston kautta:
 
 ```python
@@ -176,10 +177,18 @@ Testi suoritettiin komennolla:
 robot -d outputs tests/login-test.robot
 ```
 
+
 ## Lopputulos
+
 Testi suoritettu onnistuneesti. Käyttäjätunnus ja salasana haettiin `.env` -tiedostosta, eikä tietoja kirjoitettu suoraan testikoodiin..
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
 - [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
+
+## Käytetyt tiedostojen linkit
+
+- [login-test.robot](https://github.com/SHEEPLAND/Terveyspaivakirja-2025/blob/main/tests/login-test.robot) 
+- [load_env.py](https://github.com/SHEEPLAND/Terveyspaivakirja-2025/blob/main/load_env.py)  
+- [.env](https://github.com/SHEEPLAND/Terveyspaivakirja-2025/blob/main/Diary-BE-2025-main/.env) – (ei näkyvissä julkisesti)
 
 
 # Tehtävä 6: Tietojen salaaminen CryptoLibraryn avulla
@@ -188,6 +197,7 @@ Tässä tehtävässä salattiin käyttäjätunnus ja salasana käyttäen `Crypto
 🔗 [GitHub: 03. Tietojen salaus ja piilottaminen](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/03_tietojen_salaus_ja_piilottaminen.md)
 
 ## Kirjastot ja työkalut
+
 Tehtävässä käytetyt seuraavat kirjastot ja työkalut:
 
 - CryptoLibrary asennettiin:
@@ -233,7 +243,8 @@ Login With Encrypted Credentials
 Testi suoritettu onnistuneesti.
 - Salatut muuttujat alkoivat muodossa crypt:...
 - Lokitiedoston tiedot näkyvät muodossa ***, eikä arkaluonteisia tietoja ole vuotanut.
-
+  
+- [login-test.robot](https://github.com/SHEEPLAND/Terveyspaivakirja-2025/blob/main/tests/login-test.robot)
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
 - [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
