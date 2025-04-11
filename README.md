@@ -248,7 +248,7 @@ Testi suoritettu onnistuneesti.
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
 - [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
-# Tehtävä 7 Raportit ja lokitiedostot
+# Tehtävä 7: Raportit ja lokitiedostot
 Tässä tehtävässä tutustuttiin Robot Frameworkin tuottamiin raportti- ja lokitiedostoihin. Tiedostot ohjattiin erilliseen `outputs/`-kansioon testiajon yhteydessä. Tehtävä suoritettiin seuraavien ohjeiden mukaisesti:  
 🔗 [GitHub: 04. Raportit ja lokitiedostot](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/04_raportit_ja_lokitiedostot.md)
 
@@ -279,7 +279,7 @@ Testi suoritettu onnistuneesti ja kaikki tiedostot löytyyvät `outputs/` kansio
 - [Testiraportti](http://127.0.0.1:3001/outputs/report.html)
 
 
-# Tehtävä 8 GitHub Pages -julkaisu
+# Tehtävä 8: GitHub Pages -julkaisu
 
 Tässä tehtävässä julkaistiin Robot Frameworkin tuottamat log.html- ja report.html-tiedostot GitHub Pagesin kautta, jotta testitulokset näkyvät muille käyttäjille suoraan selaimessa.
 
