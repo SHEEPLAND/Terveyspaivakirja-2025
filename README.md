@@ -248,7 +248,65 @@ Testi suoritettu onnistuneesti.
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
 - [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
+# Tehtävä 7 Raportit ja lokitiedostot
+Tässä tehtävässä tutustuttiin Robot Frameworkin tuottamiin raportti- ja lokitiedostoihin. Tiedostot ohjattiin erilliseen `outputs/`-kansioon testiajon yhteydessä. Tehtävä suoritettiin seuraavien ohjeiden mukaisesti:  
+🔗 [GitHub: 04. Raportit ja lokitiedostot](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/04_raportit_ja_lokitiedostot.md)
 
+## Tavoitteet
+
+- Ohjata testitulokset omaan kansioon
+- Ymmärtää mitä tiedostot `log.html`, `report.html` ja `output.xml` sisältävät
+- Tarkastella raportteja selaimessa testiajon jälkeen
+
+---
+## Toteus
+Testit suoritettiin seuraavalla komennolla:
+
+```bash
+robot -d outputs tests/login-test.robot
+```
+
+Tamän komento:
+- Suorittaa testitiedoston `login-test.robot` ja tallenta tulokset `outputs/` hakemistoon seuraavasti:
+    - log.html – yksityiskohtainen loki
+    - report.html – visuaalinen yhteenveto
+    - output.xml – koneluettava testitulos
+
+## Lopputulos
+Testi suoritettu onnistuneesti ja kaikki tiedostot löytyyvät `outputs/` kansiosta.
+
+- [Testiloki](http://127.0.0.1:3001/outputs/log.html)
+- [Testiraportti](http://127.0.0.1:3001/outputs/report.html)
+
+
+# Tehtävä 8 GitHub Pages -julkaisu
+
+Tässä tehtävässä julkaistiin Robot Frameworkin tuottamat log.html- ja report.html-tiedostot GitHub Pagesin kautta, jotta testitulokset näkyvät muille käyttäjille suoraan selaimessa.
+
+Tehtävä suoritettiin seuraavien ohjeiden mukaisesti:  
+🔗 [GitHub: 04. Raportit ja lokitiedostot](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/04_raportit_ja_lokitiedostot.md)
+
+## Tavoitteet
+
+- Julkaista log.html ja report.html GitHub Pagesin kautta
+- Mahdollistaa testitulosten katsominen suoraan selaimessa
+
+## Toteutus
+
+1. Lisättiin outputs/-kansio GitHubiin
+
+2. Aktivointiin GitHub Pages:
+- Settings → Pages
+- Source: main branch, / (root) kansio
+
+3. Odotettiin hetki, kunnes julkinen osoite oli käytettävissä:
+- [GitHub Sivu](https://sheepland.github.io/Terveyspaivakirja-2025/)
+
+## Lopputulos
+Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
+
+- [Testiloki](http://127.0.0.1:3001/outputs/log.html)
+- [Testiraportti](http://127.0.0.1:3001/outputs/report.html)
 
 ## Tekoälyn käyttö
 Tässä tehtävässä tekoälyä on käytetty virheiden tunnistamiseen, korjaamiseen ja dokumentaation luettavuuden parantamiseen.
