@@ -275,8 +275,8 @@ Tamän komento:
 ## Lopputulos
 Testi suoritettu onnistuneesti ja kaikki tiedostot löytyyvät `outputs/` kansiosta.
 
-- [Testiloki](http://127.0.0.1:3001/outputs/log.html)
-- [Testiraportti](http://127.0.0.1:3001/outputs/report.html)
+- [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
+- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 
 # Tehtävä 8: GitHub Pages -julkaisu
@@ -305,8 +305,8 @@ Tehtävä suoritettiin seuraavien ohjeiden mukaisesti:
 ## Lopputulos
 Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
 
-- [Testiloki](http://127.0.0.1:3001/outputs/log.html)
-- [Testiraportti](http://127.0.0.1:3001/outputs/report.html)
+- [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
+- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 ## Tekoälyn käyttö
 Tässä tehtävässä tekoälyä on käytetty virheiden tunnistamiseen, korjaamiseen ja dokumentaation luettavuuden parantamiseen.
