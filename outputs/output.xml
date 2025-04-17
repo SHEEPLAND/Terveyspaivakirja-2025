@@ -1,85 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.12.4 on darwin)" generated="2025-04-04T20:10:29.641185" rpa="false" schemaversion="5">
-<suite id="s1" name="Login-Test" source="/Users/abonti/Documents/Terveyspäiväkirja/tests/login-test.robot">
-<test id="s1-t1" name="Login To Health Diary With Encrypted Vars" line="13">
-<kw name="New Browser" owner="Browser">
-<msg time="2025-04-04T20:10:40.100596" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/Users/abonti/Documents/Terveyspa\u0308iva\u0308kirja/outputs/browser/traces/temp/cab9a421-60e1-4b38-8a79-7a324022a875"}</msg>
-<msg time="2025-04-04T20:10:40.204728" level="INFO">Starting Browser process /Applications/anaconda3/lib/python3.12/site-packages/Browser/wrapper/index.js using port 60666</msg>
-<msg time="2025-04-04T20:10:40.205353" level="INFO">Node startup parameters: ['node', '/Applications/anaconda3/lib/python3.12/site-packages/Browser/wrapper/index.js', '60666']</msg>
-<msg time="2025-04-04T20:10:45.195793" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/Users/abonti/Documents/Terveyspäiväkirja/outputs/browser/traces/temp/cab9a421-60e1-4b38-8a79-7a324022a875"}</msg>
-<arg>chromium</arg>
-<arg>headless=No</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-04-04T20:10:40.094842" elapsed="5.101630"/>
+<robot generator="Robot 7.2.2 (Python 3.12.4 on darwin)" generated="2025-04-17T19:20:21.992582" rpa="false" schemaversion="5">
+<suite id="s1" name="Api-Test" source="/Users/abonti/Documents/Terveyspäiväkirja/tests/api-test.robot">
+<kw name="Kirjaudu ja tallenna token" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-04-17T19:20:22.243508" level="INFO">Creating Session using : alias=api, url=http://127.0.0.1:3000/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-04-17T19:20:22.243243" elapsed="0.000556"/>
 </kw>
-<kw name="New Page" owner="Browser">
-<msg time="2025-04-04T20:10:48.994543" level="INFO">Successfully initialized new page object and opened url: http://127.0.0.1:3001/Diary-FE-2025-main/vite-project/src/html/login.html</msg>
-<msg time="2025-04-04T20:10:48.994678" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
-<arg>${BaseUrl}/login.html</arg>
-<tag>BrowserControl</tag>
-<tag>Setter</tag>
-<doc>Open a new Page.</doc>
-<status status="PASS" start="2025-04-04T20:10:45.197624" elapsed="3.797352"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.244664" level="INFO">${payload} = {'username': 'x345', 'password': 'x1234567'}</msg>
+<var>${payload}</var>
+<arg>username=${USERNAME}</arg>
+<arg>password=${PASSWORD}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.244006" elapsed="0.000706"/>
 </kw>
-<kw name="Get Title" owner="Browser">
-<msg time="2025-04-04T20:10:49.010375" level="INFO">Title: 'Login Form'</msg>
-<arg>==</arg>
-<arg>Login Form</arg>
-<tag>Assertion</tag>
-<tag>Getter</tag>
-<tag>PageContent</tag>
-<doc>Returns the title of the current page.</doc>
-<status status="PASS" start="2025-04-04T20:10:48.995327" elapsed="0.015391"/>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-17T19:20:22.383336" level="INFO">POST Request : url=http://127.0.0.1:3000/api/auth/login 
+ path_url=/api/auth/login 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '44', 'Content-Type': 'application/json'} 
+ body=b'{"username": "x345", "password": "x1234567"}' 
+ </msg>
+<msg time="2025-04-17T19:20:22.383501" level="INFO">POST Response : url=http://127.0.0.1:3000/api/auth/login 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '618', 'ETag': 'W/"26a-FnOmiVQb/QywXO9JxZzAKLza0sc"', 'Date': 'Thu, 17 Apr 2025 16:20:22 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"message":"login ok","user":{"user_id":2,"username":"x345","password":"$2a$10$aiSyO1Bunxb6u4FUWoMBT.jONdjJJOc2SiEguGCfWF8OlsVRkSwi2","email":"xx@example.com","created_at":"2025-03-04T11:10:55.000Z","user_level":"regular"},"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6IngzNDUiLCJwYXNzd29yZCI6IiQyYSQxMCRhaVN5TzFCdW54YjZ1NEZVV29NQlQuak9OZGpKSk9jMlNpRWd1R0NmV0Y4T2xzVlJrU3dpMiIsImVtYWlsIjoieHhAZXhhbXBsZS5jb20iLCJjcmVhdGVkX2F0IjoiMjAyNS0wMy0wNFQxMToxMDo1NS4wMDBaIiwidXNlcl9sZXZlbCI6InJlZ3VsYXIiLCJpYXQiOjE3NDQ5MDY4MjIsImV4cCI6MTc0NDk5MzIyMn0.94ci0vw2fWFGyssSsvKPWyfRmxb3NcLj0qV0-U8q3gQ"} 
+ </msg>
+<msg time="2025-04-17T19:20:22.383676" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/auth/login</arg>
+<arg>json=${payload}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.244869" elapsed="0.138850"/>
 </kw>
-<kw name="Type Text" owner="Browser">
-<msg time="2025-04-04T20:10:49.012855" level="INFO">Types the text '***' in the given field.</msg>
-<arg>id=login-username</arg>
-<arg>${Username}</arg>
-<arg>delay=0.2 s</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-04-04T20:10:49.011407" elapsed="1.761073"/>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.384517" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.383902" elapsed="0.000846"/>
 </kw>
-<kw name="Type Secret" owner="Browser">
-<arg>id=login-pass</arg>
-<arg>$Password</arg>
-<arg>delay=0.2 s</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Types the given secret from ``variable_name`` into the text field
-found by ``selector``.</doc>
-<status status="PASS" start="2025-04-04T20:10:50.773181" elapsed="1.272400"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.385538" level="INFO">${json} = {'message': 'login ok', 'user': {'user_id': 2, 'username': 'x345', 'password': '$2a$10$aiSyO1Bunxb6u4FUWoMBT.jONdjJJOc2SiEguGCfWF8OlsVRkSwi2', 'email': 'xx@example.com', 'created_at': '2025-03-04T11:1...</msg>
+<var>${json}</var>
+<arg>${response.json()}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.384909" elapsed="0.000673"/>
 </kw>
-<kw name="Click" owner="Browser">
-<msg time="2025-04-04T20:10:52.048631" level="INFO">Clicks the element 'css=.login-button'.</msg>
-<arg>css=.login-button</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-04-04T20:10:52.046876" elapsed="0.058598"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.386285" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6IngzNDUiLCJwYXNzd29yZCI6IiQyYSQxMCRhaVN5TzFCdW54YjZ1NEZVV29NQlQuak9OZGpKSk9jMlNpRWd1R0NmV0Y4T2xzVlJrU3dpMiIsImVtYWlsIjoieHhA...</msg>
+<var>${token}</var>
+<arg>Bearer ${json['token']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.385727" elapsed="0.000601"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2025-04-04T20:10:54.107955" level="INFO">Slept 2 seconds.</msg>
-<arg>2 s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2025-04-04T20:10:52.105908" elapsed="2.002396"/>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.386720" level="INFO">${token} = Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6IngzNDUiLCJwYXNzd29yZCI6IiQyYSQxMCRhaVN5TzFCdW54YjZ1NEZVV29NQlQuak9OZGpKSk9jMlNpRWd1R0NmV0Y4T2xzVlJrU3dpMiIsImVtYWlsIjoieHhA...</msg>
+<arg>${token}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.386488" elapsed="0.000297"/>
 </kw>
-<msg time="2025-04-04T20:10:54.118370" level="INFO">Set timeout to: 10000</msg>
-<status status="PASS" start="2025-04-04T20:10:40.087630" elapsed="14.021774"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.387095" level="INFO">Token haettu ja tallennettu: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6IngzNDUiLCJwYXNzd29yZCI6IiQyYSQxMCRhaVN5TzFCdW54YjZ1NEZVV29NQlQuak9OZGpKSk9jMlNpRWd1R0NmV0Y4T2xzVlJrU3dpMiIsImVtYWlsIjoieHhAZXhhbXBsZS5jb20iLCJjcmVhdGVkX2F0IjoiMjAyNS0wMy0wNFQxMToxMDo1NS4wMDBaIiwidXNlcl9sZXZlbCI6InJlZ3VsYXIiLCJpYXQiOjE3NDQ5MDY4MjIsImV4cCI6MTc0NDk5MzIyMn0.94ci0vw2fWFGyssSsvKPWyfRmxb3NcLj0qV0-U8q3gQ</msg>
+<arg>Token haettu ja tallennettu: ${token}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.386917" elapsed="0.000245"/>
+</kw>
+<status status="PASS" start="2025-04-17T19:20:22.242525" elapsed="0.144730"/>
+</kw>
+<test id="s1-t1" name="Hae kaikki merkinnät tokenilla" line="26">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.388236" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6IngzNDUiLCJwYXNzd29yZCI6IiQyYSQxMCRhaVN5TzFCdW54YjZ1NEZVV29NQlQuak9OZGpKSk9jMlNpRWd1R0NmV0Y4T2xzVlJrU3dpM...</msg>
+<var>${headers}</var>
+<arg>Authorization=${token}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.387872" elapsed="0.000410"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-04-17T19:20:22.405640" level="INFO">GET Request : url=http://127.0.0.1:3000/api/entries 
+ path_url=/api/entries 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6IngzNDUiLCJwYXNzd29yZCI6IiQyYSQxMCRhaVN5TzFCdW54YjZ1NEZVV29NQlQuak9OZGpKSk9jMlNpRWd1R0NmV0Y4T2xzVlJrU3dpMiIsImVtYWlsIjoieHhAZXhhbXBsZS5jb20iLCJjcmVhdGVkX2F0IjoiMjAyNS0wMy0wNFQxMToxMDo1NS4wMDBaIiwidXNlcl9sZXZlbCI6InJlZ3VsYXIiLCJpYXQiOjE3NDQ5MDY4MjIsImV4cCI6MTc0NDk5MzIyMn0.94ci0vw2fWFGyssSsvKPWyfRmxb3NcLj0qV0-U8q3gQ'} 
+ body=None 
+ </msg>
+<msg time="2025-04-17T19:20:22.405780" level="INFO">GET Response : url=http://127.0.0.1:3000/api/entries 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '10404', 'ETag': 'W/"28a4-K8gBwNyEhZPhKFvf38unXLMBG2o"', 'Date': 'Thu, 17 Apr 2025 16:20:22 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body=[{"entry_id":2,"user_id":2,"entry_date":"2025-02-26T22:00:00.000Z","mood":"iloinen","energy_level":5,"stress_level":3,"sleep_hours":6,"notes":"iloinen","goals":"drink more water","created_at":"2025-03-04T12:37:33.000Z"},{"entry_id":3,"user_id":2,"entry_date":"2025-02-26T22:00:00.000Z","mood":"iloinen","energy_level":5,"stress_level":3,"sleep_hours":6,"notes":"iloinen","goals":"drink more water","created_at":"2025-03-09T21:51:04.000Z"},{"entry_id":4,"user_id":2,"entry_date":"2025-02-26T22:00:00.000Z","mood":"Happy","energy_level":8,"stress_level":3,"sleep_hours":8,"notes":"I had a good day!","goals":"Save more money!","created_at":"2025-03-10T11:21:42.000Z"},{"entry_id":5,"user_id":2,"entry_date":"2025-02-26T22:00:00.000Z","mood":"Happy","energy_level":8,"stress_level":3,"sleep_hours":8,"notes":"I had a good day!","goals":"Save more money!","created_at":"2025-03-10T15:09:37.000Z"},{"entry_id":6,"user_id":2,"entry_date":"2025-02-26T22:00:00.000Z","mood":"Happy","energy_level":8,"stress_level":3,"sleep_hours":8,"notes":"I had a good day!","goals":"Save more money!","created_at":"2025-03-10T15:10:54.000Z"},{"entry_id":7,"user_id":2,"entry_date":"2025-03-09T22:00:00.000Z","mood":"happy","energy_level":5,"stress_level":5,"sleep_hours":7,"notes":"moi","goals":"moi","created_at":"2025-03-10T15:14:37.000Z"},{"entry_id":8,"user_id":2,"entry_date":"2003-01-08T22:00:00.000Z","mood":"happy","energy_level":5,"stress_level":8,"sleep_hours":6,"notes":"moi","goals":"moi","created_at":"2025-03-10T16:55:05.000Z"},{"entry_id":9,"user_id":2,"entry_date":"2003-01-08T22:00:00.000Z","mood":"happy","energy_level":5,"stress_level":8,"sleep_hours":6,"notes":"moi","goals":"moi","created_at":"2025-03-10T16:55:54.000Z"},{"entry_id":10,"user_id":2,"entry_date":"2025-03-09T22:00:00.000Z","mood":"happy","energy_level":5,"stress_level":5,"sleep_hours":7,"notes":"Good","goals":"Happy","created_at":"2025-03-10T17:14:40.000Z"},{"entry_id":11,"user_id":2,"entry_date":"2025-03-17T22:00:00.000Z","mood":"happy","energy_level":6,"stress_level":7,"sleep_hours":6,"notes":"moi","goals":"moi","created_at":"2025-03-10T17:30:43.000Z"},{"entry_id":12,"user_id":2,"entry_date":"2025-03-19T22:00:00.000Z","mood":"happy","energy_level":5,"stress_level":5,"sleep_hours":5,"notes":"moi","goals":"moi","created_at":"2025-03-10T22:10:57.000Z"},{"entry_id":13,"user_id":2,"entry_date":"2025-03-19T22:00:00.000Z","mood":"happy","energy_level":5,"stress_level":5,"sleep_hours":8,"notes":"moi","goals":"moi","created_at":"2025-03-10T22:16:26.000Z"},{"entry_id":14,"user_id":2,"entry_date":"2025-03-05T22:00:00.000Z","mood":"happy","energy_level":4,"stress_level":5,"sleep_hours":7,"notes":"moi","goals":"moi","created_at":"2025-03-10T22:21:53.000Z"},{"entry_id":15,"user_id":2,"entry_date":"2025-03-12T22:00:00.000Z","mood":"happy","energy_level":5,"stress_level":6,"sleep_hours":5,"notes":"moi","goals":"moi","created_at":"2025-03-10T22:25:10.000Z"},{"entry_id":16,"user_id":2,"entry_date":"2025-03-06T22:00:00.000Z","mood":"happy","energy_level":6,"stress_level":5,"sleep_hours":5,"notes":"moi","goals":"moi","created_at":"2025-03-10T22:31:31.000Z"},{"entry_id":17,"user_id":2,"entry_date":"2025-03-10T22:00:00.000Z","mood":"stressed","energy_level":8,"stress_level":7,"sleep_hours":5,"notes":"Tired","goals":"Finish work","created_at":"2025-03-10T22:37:30.000Z"},{"entry_id":18,"user_id":2,"entry_date":"2025-03-10T22:00:00.000Z","mood":"happy","energy_level":6,"stress_level":8,"sleep_hours":7,"notes":"moi","goals":"moi","created_at":"2025-03-11T00:09:50.000Z"},{"entry_id":19,"user_id":2,"entry_date":"2025-03-10T22:00:00.000Z","mood":"happy","energy_level":5,"stress_level":5,"sleep_hours":5,"notes":"I am grateful","goals":"Save more money!","created_at":"2025-03-11T08:37:05.000Z"},{"entry_id":20,"user_id":2,"entry_date":"2025-03-10T22:00:00.000Z","mood":"moi","energy_level":5,"stress_level":5,"sleep_hours":6,"notes":"moi","goals":"moi","created_at":"2025-03-11T10:53:21.000Z"},{"entry_id":21,"user_id":2,"entry_date":"2025-03-10T22:00:00.000Z","mood":"happy","energy_level":6,"stress_level":8,"sleep_hours":8,"notes":"moi","goals":"moi","created_at":"2025-03-11T11:33:38.000Z"},{"entry_id":22,"user_id":2,"entry_date":"2025-04-02T21:00:00.000Z","mood":"iloinen","energy_level":6,"stress_level":5,"sleep_hours":6,"notes":"\nYes","goals":"Yes","created_at":"2025-04-03T11:29:55.000Z"},{"entry_id":23,"user_id":2,"entry_date":"2025-04-08T21:00:00.000Z","mood":"happy","energy_level":7,"stress_level":5,"sleep_hours":4,"notes":"moi","goals":"moi","created_at":"2025-04-03T13:51:36.000Z"},{"entry_id":24,"user_id":2,"entry_date":"2025-04-24T21:00:00.000Z","mood":"moi","energy_level":6,"stress_level":7,"sleep_hours":6,"notes":"moi","goals":"moi","created_at":"2025-04-03T13:57:41.000Z"},{"entry_id":25,"user_id":2,"entry_date":"2025-04-22T21:00:00.000Z","mood":"moi","energy_level":8,"stress_level":7,"sleep_hours":9,"notes":"\nmoi","goals":"moi","created_at":"2025-04-03T14:01:25.000Z"},{"entry_id":26,"user_id":2,"entry_date":"2025-04-10T21:00:00.000Z","mood":"okay","energy_level":6,"stress_level":5,"sleep_hours":5,"notes":"\ndone","goals":"done","created_at":"2025-04-03T14:14:48.000Z"},{"entry_id":27,"user_id":2,"entry_date":"2025-04-08T21:00:00.000Z","mood":"okay","energy_level":8,"stress_level":6,"sleep_hours":7,"notes":"iiii","goals":"noooooo","created_at":"2025-04-09T18:54:53.000Z"},{"entry_id":28,"user_id":2,"entry_date":"2025-04-08T21:00:00.000Z","mood":"iloinen","energy_level":6,"stress_level":5,"sleep_hours":9,"notes":"moi","goals":"jjjj","created_at":"2025-04-09T19:09:34.000Z"},{"entry_id":30,"user_id":2,"entry_date":"2025-04-11T21:00:00.000Z","mood":"iloinen","energy_level":6,"stress_level":6,"sleep_hours":6,"notes":"Testing","goals":"Testing","created_at":"2025-04-12T18:54:26.000Z"},{"entry_id":31,"user_id":2,"entry_date":"2025-04-24T21:00:00.000Z","mood":"iloinen","energy_level":5,"stress_level":5,"sleep_hours":6,"notes":"tttt","goals":"tttt","created_at":"2025-04-12T19:12:46.000Z"},{"entry_id":32,"user_id":2,"entry_date":"2025-04-22T21:00:00.000Z","mood":"moi","energy_level":4,"stress_level":7,"sleep_hours":8,"notes":"nnnn","goals":"nnnn","created_at":"2025-04-12T19:13:12.000Z"},{"entry_id":33,"user_id":2,"entry_date":"2025-04-11T21:00:00.000Z","mood":"okay","energy_level":6,"stress_level":6,"sleep_hours":5,"notes":"moimoi","goals":"testingtesting","created_at":"2025-04-12T19:17:27.000Z"},{"entry_id":34,"user_id":2,"entry_date":"2025-04-11T21:00:00.000Z","mood":"iloinen","energy_level":6,"stress_level":5,"sleep_hours":8,"notes":"okok","goals":"mumu","created_at":"2025-04-12T19:23:51.000Z"},{"entry_id":35,"user_id":2,"entry_date":"2025-04-11T21:00:00.000Z","mood":"iloinen","energy_level":5,"stress_level":8,"sleep_hours":5,"notes":"ttt","goals":"ttt","created_at":"2025-04-12T19:29:59.000Z"},{"entry_id":36,"user_id":2,"entry_date":"2025-04-11T21:00:00.000Z","mood":"happy","energy_level":6,"stress_level":7,"sleep_hours":5,"notes":"moi","goals":"ttt","created_at":"2025-04-12T20:04:21.000Z"},{"entry_id":37,"user_id":2,"entry_date":"2025-04-14T21:00:00.000Z","mood":"iloinen","energy_level":6,"stress_level":8,"sleep_hours":6,"notes":"Testing Testing","goals":"Testing","created_at":"2025-04-15T17:24:13.000Z"},{"entry_id":38,"user_id":2,"entry_date":"2025-04-29T21:00:00.000Z","mood":"iloinen","energy_level":6,"stress_level":5,"sleep_hours":10,"notes":"Testing Testing","goals":"Testing","created_at":"2025-04-15T17:24:54.000Z"},{"entry_id":39,"user_id":2,"entry_date":"2025-02-26T22:00:00.000Z","mood":"Happy","energy_level":8,"stress_level":3,"sleep_hours":8,"notes":"I had a good day!","goals":"Save more money!","created_at":"2025-04-17T15:16:23.000Z"},{"entry_id":40,"user_id":2,"entry_date":"2025-02-26T22:00:00.000Z","mood":"Happy","energy_level":8,"stress_level":3,"sleep_hours":8,"notes":"I had a good day!","goals":"Save more money!","created_at":"2025-04-17T15:40:11.000Z"},{"entry_id":41,"user_id":2,"entry_date":"2025-02-26T22:00:00.000Z","mood":"Happy","energy_level":8,"stress_level":3,"sleep_hours":8,"notes":"I had a good day!","goals":"Save more money!","created_at":"2025-04-17T15:40:20.000Z"},{"entry_id":42,"user_id":2,"entry_date":"2025-04-16T21:00:00.000Z","mood":"Happy","energy_level":7,"stress_level":3,"sleep_hours":8,"notes":"Testimerkintä Robot Frameworkista","goals":"Syödä terveellisemmin","created_at":"2025-04-17T16:03:59.000Z"},{"entry_id":43,"user_id":2,"entry_date":"2025-04-16T21:00:00.000Z","mood":"Happy","energy_level":7,"stress_level":3,"sleep_hours":8,"notes":"Testimerkintä Robot Frameworkista","goals":"Syödä terveellisemmin","created_at":"2025-04-17T16:04:28.000Z"},{"entry_id":44,"user_id":2,"entry_date":"2025-04-16T21:00:00.000Z","mood":"Happy","energy_level":7,"stress_level":3,"sleep_hours":8,"notes":"Testimerkintä Robot Frameworkista","goals":"Syödä terveellisemmin","created_at":"2025-04-17T16:12:36.000Z"},{"entry_id":45,"user_id":2,"entry_date":"2025-04-16T21:00:00.000Z","mood":"Happy","energy_level":7,"stress_level":3,"sleep_hours":8,"notes":"Testimerkintä Robot Frameworkista","goals":"Syödä terveellisemmin","created_at":"2025-04-17T16:14:48.000Z"},{"entry_id":46,"user_id":2,"entry_date":"2025-04-16T21:00:00.000Z","mood":"Calm","energy_level":6,"stress_level":4,"sleep_hours":7,"notes":"Merkintä päivitystestaukseen","goals":"Parantaa keskittymistä","created_at":"2025-04-17T16:14:48.000Z"},{"entry_id":47,"user_id":2,"entry_date":"2025-04-16T21:00:00.000Z","mood":"Happy","energy_level":7,"stress_level":3,"sleep_hours":8,"notes":"Testimerkintä Robot Frameworkista","goals":"Syödä terveellisemmin","created_at":"2025-04-17T16:17:25.000Z"},{"entry_id":48,"user_id":2,"entry_date":"2025-04-16T21:00:00.000Z","mood":"Calm","energy_level":6,"stress_level":4,"sleep_hours":7,"notes":"Merkintä päivitystestaukseen","goals":"Parantaa keskittymistä","created_at":"2025-04-17T16:17:25.000Z"},{"entry_id":49,"user_id":2,"entry_date":"2025-04-16T21:00:00.000Z","mood":"Happy","energy_level":7,"stress_level":3,... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-04-17T19:20:22.406188" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/entries</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.388508" elapsed="0.017725"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.406530" elapsed="0.000360"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.412247" level="INFO">Merkinnät: [{'entry_id': 2, 'user_id': 2, 'entry_date': '2025-02-26T22:00:00.000Z', 'mood': 'iloinen', 'energy_level': 5, 'stress_level': 3, 'sleep_hours': 6, 'notes': 'iloinen', 'goals': 'drink more water', 'created_at': '2025-03-04T12:37:33.000Z'}, {'entry_id': 3, 'user_id': 2, 'entry_date': '2025-02-26T22:00:00.000Z', 'mood': 'iloinen', 'energy_level': 5, 'stress_level': 3, 'sleep_hours': 6, 'notes': 'iloinen', 'goals': 'drink more water', 'created_at': '2025-03-09T21:51:04.000Z'}, {'entry_id': 4, 'user_id': 2, 'entry_date': '2025-02-26T22:00:00.000Z', 'mood': 'Happy', 'energy_level': 8, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'I had a good day!', 'goals': 'Save more money!', 'created_at': '2025-03-10T11:21:42.000Z'}, {'entry_id': 5, 'user_id': 2, 'entry_date': '2025-02-26T22:00:00.000Z', 'mood': 'Happy', 'energy_level': 8, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'I had a good day!', 'goals': 'Save more money!', 'created_at': '2025-03-10T15:09:37.000Z'}, {'entry_id': 6, 'user_id': 2, 'entry_date': '2025-02-26T22:00:00.000Z', 'mood': 'Happy', 'energy_level': 8, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'I had a good day!', 'goals': 'Save more money!', 'created_at': '2025-03-10T15:10:54.000Z'}, {'entry_id': 7, 'user_id': 2, 'entry_date': '2025-03-09T22:00:00.000Z', 'mood': 'happy', 'energy_level': 5, 'stress_level': 5, 'sleep_hours': 7, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-10T15:14:37.000Z'}, {'entry_id': 8, 'user_id': 2, 'entry_date': '2003-01-08T22:00:00.000Z', 'mood': 'happy', 'energy_level': 5, 'stress_level': 8, 'sleep_hours': 6, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-10T16:55:05.000Z'}, {'entry_id': 9, 'user_id': 2, 'entry_date': '2003-01-08T22:00:00.000Z', 'mood': 'happy', 'energy_level': 5, 'stress_level': 8, 'sleep_hours': 6, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-10T16:55:54.000Z'}, {'entry_id': 10, 'user_id': 2, 'entry_date': '2025-03-09T22:00:00.000Z', 'mood': 'happy', 'energy_level': 5, 'stress_level': 5, 'sleep_hours': 7, 'notes': 'Good', 'goals': 'Happy', 'created_at': '2025-03-10T17:14:40.000Z'}, {'entry_id': 11, 'user_id': 2, 'entry_date': '2025-03-17T22:00:00.000Z', 'mood': 'happy', 'energy_level': 6, 'stress_level': 7, 'sleep_hours': 6, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-10T17:30:43.000Z'}, {'entry_id': 12, 'user_id': 2, 'entry_date': '2025-03-19T22:00:00.000Z', 'mood': 'happy', 'energy_level': 5, 'stress_level': 5, 'sleep_hours': 5, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-10T22:10:57.000Z'}, {'entry_id': 13, 'user_id': 2, 'entry_date': '2025-03-19T22:00:00.000Z', 'mood': 'happy', 'energy_level': 5, 'stress_level': 5, 'sleep_hours': 8, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-10T22:16:26.000Z'}, {'entry_id': 14, 'user_id': 2, 'entry_date': '2025-03-05T22:00:00.000Z', 'mood': 'happy', 'energy_level': 4, 'stress_level': 5, 'sleep_hours': 7, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-10T22:21:53.000Z'}, {'entry_id': 15, 'user_id': 2, 'entry_date': '2025-03-12T22:00:00.000Z', 'mood': 'happy', 'energy_level': 5, 'stress_level': 6, 'sleep_hours': 5, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-10T22:25:10.000Z'}, {'entry_id': 16, 'user_id': 2, 'entry_date': '2025-03-06T22:00:00.000Z', 'mood': 'happy', 'energy_level': 6, 'stress_level': 5, 'sleep_hours': 5, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-10T22:31:31.000Z'}, {'entry_id': 17, 'user_id': 2, 'entry_date': '2025-03-10T22:00:00.000Z', 'mood': 'stressed', 'energy_level': 8, 'stress_level': 7, 'sleep_hours': 5, 'notes': 'Tired', 'goals': 'Finish work', 'created_at': '2025-03-10T22:37:30.000Z'}, {'entry_id': 18, 'user_id': 2, 'entry_date': '2025-03-10T22:00:00.000Z', 'mood': 'happy', 'energy_level': 6, 'stress_level': 8, 'sleep_hours': 7, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-11T00:09:50.000Z'}, {'entry_id': 19, 'user_id': 2, 'entry_date': '2025-03-10T22:00:00.000Z', 'mood': 'happy', 'energy_level': 5, 'stress_level': 5, 'sleep_hours': 5, 'notes': 'I am grateful', 'goals': 'Save more money!', 'created_at': '2025-03-11T08:37:05.000Z'}, {'entry_id': 20, 'user_id': 2, 'entry_date': '2025-03-10T22:00:00.000Z', 'mood': 'moi', 'energy_level': 5, 'stress_level': 5, 'sleep_hours': 6, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-11T10:53:21.000Z'}, {'entry_id': 21, 'user_id': 2, 'entry_date': '2025-03-10T22:00:00.000Z', 'mood': 'happy', 'energy_level': 6, 'stress_level': 8, 'sleep_hours': 8, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-03-11T11:33:38.000Z'}, {'entry_id': 22, 'user_id': 2, 'entry_date': '2025-04-02T21:00:00.000Z', 'mood': 'iloinen', 'energy_level': 6, 'stress_level': 5, 'sleep_hours': 6, 'notes': '\nYes', 'goals': 'Yes', 'created_at': '2025-04-03T11:29:55.000Z'}, {'entry_id': 23, 'user_id': 2, 'entry_date': '2025-04-08T21:00:00.000Z', 'mood': 'happy', 'energy_level': 7, 'stress_level': 5, 'sleep_hours': 4, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-04-03T13:51:36.000Z'}, {'entry_id': 24, 'user_id': 2, 'entry_date': '2025-04-24T21:00:00.000Z', 'mood': 'moi', 'energy_level': 6, 'stress_level': 7, 'sleep_hours': 6, 'notes': 'moi', 'goals': 'moi', 'created_at': '2025-04-03T13:57:41.000Z'}, {'entry_id': 25, 'user_id': 2, 'entry_date': '2025-04-22T21:00:00.000Z', 'mood': 'moi', 'energy_level': 8, 'stress_level': 7, 'sleep_hours': 9, 'notes': '\nmoi', 'goals': 'moi', 'created_at': '2025-04-03T14:01:25.000Z'}, {'entry_id': 26, 'user_id': 2, 'entry_date': '2025-04-10T21:00:00.000Z', 'mood': 'okay', 'energy_level': 6, 'stress_level': 5, 'sleep_hours': 5, 'notes': '\ndone', 'goals': 'done', 'created_at': '2025-04-03T14:14:48.000Z'}, {'entry_id': 27, 'user_id': 2, 'entry_date': '2025-04-08T21:00:00.000Z', 'mood': 'okay', 'energy_level': 8, 'stress_level': 6, 'sleep_hours': 7, 'notes': 'iiii', 'goals': 'noooooo', 'created_at': '2025-04-09T18:54:53.000Z'}, {'entry_id': 28, 'user_id': 2, 'entry_date': '2025-04-08T21:00:00.000Z', 'mood': 'iloinen', 'energy_level': 6, 'stress_level': 5, 'sleep_hours': 9, 'notes': 'moi', 'goals': 'jjjj', 'created_at': '2025-04-09T19:09:34.000Z'}, {'entry_id': 30, 'user_id': 2, 'entry_date': '2025-04-11T21:00:00.000Z', 'mood': 'iloinen', 'energy_level': 6, 'stress_level': 6, 'sleep_hours': 6, 'notes': 'Testing', 'goals': 'Testing', 'created_at': '2025-04-12T18:54:26.000Z'}, {'entry_id': 31, 'user_id': 2, 'entry_date': '2025-04-24T21:00:00.000Z', 'mood': 'iloinen', 'energy_level': 5, 'stress_level': 5, 'sleep_hours': 6, 'notes': 'tttt', 'goals': 'tttt', 'created_at': '2025-04-12T19:12:46.000Z'}, {'entry_id': 32, 'user_id': 2, 'entry_date': '2025-04-22T21:00:00.000Z', 'mood': 'moi', 'energy_level': 4, 'stress_level': 7, 'sleep_hours': 8, 'notes': 'nnnn', 'goals': 'nnnn', 'created_at': '2025-04-12T19:13:12.000Z'}, {'entry_id': 33, 'user_id': 2, 'entry_date': '2025-04-11T21:00:00.000Z', 'mood': 'okay', 'energy_level': 6, 'stress_level': 6, 'sleep_hours': 5, 'notes': 'moimoi', 'goals': 'testingtesting', 'created_at': '2025-04-12T19:17:27.000Z'}, {'entry_id': 34, 'user_id': 2, 'entry_date': '2025-04-11T21:00:00.000Z', 'mood': 'iloinen', 'energy_level': 6, 'stress_level': 5, 'sleep_hours': 8, 'notes': 'okok', 'goals': 'mumu', 'created_at': '2025-04-12T19:23:51.000Z'}, {'entry_id': 35, 'user_id': 2, 'entry_date': '2025-04-11T21:00:00.000Z', 'mood': 'iloinen', 'energy_level': 5, 'stress_level': 8, 'sleep_hours': 5, 'notes': 'ttt', 'goals': 'ttt', 'created_at': '2025-04-12T19:29:59.000Z'}, {'entry_id': 36, 'user_id': 2, 'entry_date': '2025-04-11T21:00:00.000Z', 'mood': 'happy', 'energy_level': 6, 'stress_level': 7, 'sleep_hours': 5, 'notes': 'moi', 'goals': 'ttt', 'created_at': '2025-04-12T20:04:21.000Z'}, {'entry_id': 37, 'user_id': 2, 'entry_date': '2025-04-14T21:00:00.000Z', 'mood': 'iloinen', 'energy_level': 6, 'stress_level': 8, 'sleep_hours': 6, 'notes': 'Testing Testing', 'goals': 'Testing', 'created_at': '2025-04-15T17:24:13.000Z'}, {'entry_id': 38, 'user_id': 2, 'entry_date': '2025-04-29T21:00:00.000Z', 'mood': 'iloinen', 'energy_level': 6, 'stress_level': 5, 'sleep_hours': 10, 'notes': 'Testing Testing', 'goals': 'Testing', 'created_at': '2025-04-15T17:24:54.000Z'}, {'entry_id': 39, 'user_id': 2, 'entry_date': '2025-02-26T22:00:00.000Z', 'mood': 'Happy', 'energy_level': 8, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'I had a good day!', 'goals': 'Save more money!', 'created_at': '2025-04-17T15:16:23.000Z'}, {'entry_id': 40, 'user_id': 2, 'entry_date': '2025-02-26T22:00:00.000Z', 'mood': 'Happy', 'energy_level': 8, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'I had a good day!', 'goals': 'Save more money!', 'created_at': '2025-04-17T15:40:11.000Z'}, {'entry_id': 41, 'user_id': 2, 'entry_date': '2025-02-26T22:00:00.000Z', 'mood': 'Happy', 'energy_level': 8, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'I had a good day!', 'goals': 'Save more money!', 'created_at': '2025-04-17T15:40:20.000Z'}, {'entry_id': 42, 'user_id': 2, 'entry_date': '2025-04-16T21:00:00.000Z', 'mood': 'Happy', 'energy_level': 7, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'Testimerkintä Robot Frameworkista', 'goals': 'Syödä terveellisemmin', 'created_at': '2025-04-17T16:03:59.000Z'}, {'entry_id': 43, 'user_id': 2, 'entry_date': '2025-04-16T21:00:00.000Z', 'mood': 'Happy', 'energy_level': 7, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'Testimerkintä Robot Frameworkista', 'goals': 'Syödä terveellisemmin', 'created_at': '2025-04-17T16:04:28.000Z'}, {'entry_id': 44, 'user_id': 2, 'entry_date': '2025-04-16T21:00:00.000Z', 'mood': 'Happy', 'energy_level': 7, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'Testimerkintä Robot Frameworkista', 'goals': 'Syödä terveellisemmin', 'created_at': '2025-04-17T16:12:36.000Z'}, {'entry_id': 45, 'user_id': 2, 'entry_date': '2025-04-16T21:00:00.000Z', 'mood': 'Happy', 'energy_level': 7, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'Testimerkintä Robot Frameworkista', 'goals': 'Syödä terveellisemmin', 'created_at': '2025-04-17T16:14:48.000Z'}, {'entry_id': 46, 'user_id': 2, 'entry_date': '2025-04-16T21:00:00.000Z', 'mood': 'Calm', 'energy_level': 6, 'stress_level': 4, 'sleep_hours': 7, 'notes': 'Merkintä päivitystestaukseen', 'goals': 'Parantaa keskittymistä', 'created_at': '2025-04-17T16:14:48.000Z'}, {'entry_id': 47, 'user_id': 2, 'entry_date': '2025-04-16T21:00:00.000Z', 'mood': 'Happy', 'energy_level': 7, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'Testimerkintä Robot Frameworkista', 'goals': 'Syödä terveellisemmin', 'created_at': '2025-04-17T16:17:25.000Z'}, {'entry_id': 48, 'user_id': 2, 'entry_date': '2025-04-16T21:00:00.000Z', 'mood': 'Calm', 'energy_level': 6, 'stress_level': 4, 'sleep_hours': 7, 'notes': 'Merkintä päivitystestaukseen', 'goals': 'Parantaa keskittymistä', 'created_at': '2025-04-17T16:17:25.000Z'}, {'entry_id': 49, 'user_id': 2, 'entry_date': '2025-04-16T21:00:00.000Z', 'mood': 'Happy', 'energy_level': 7, 'stress_level': 3, 'sleep_hours': 8, 'notes': 'Testimerkintä Robot Frameworkista', 'goals': 'Syödä terveellisemmin', 'created_at': '2025-04-17T16:19:44.000Z'}, {'entry_id': 50, 'user_id': 2, 'entry_date': '2025-04-16T21:00:00.000Z', 'mood': 'Calm', 'energy_level': 6, 'stress_level': 4, 'sleep_hours': 7, 'notes': 'Merkintä päivitystestaukseen', 'goals': 'Parantaa keskittymistä', 'created_at': '2025-04-17T16:19:45.000Z'}]</msg>
+<arg>Merkinnät: ${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.407103" elapsed="0.005492"/>
+</kw>
+<status status="PASS" start="2025-04-17T19:20:22.387344" elapsed="0.025947"/>
 </test>
-<status status="PASS" start="2025-04-04T20:10:29.643417" elapsed="24.477516"/>
+<test id="s1-t2" name="Lisää uusi merkintä tokenilla" line="32">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.415240" level="INFO">${headers} = {'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6IngzNDUiLCJwYXNzd29yZCI6IiQyYSQxMCRhaVN5TzFCdW54YjZ1NEZVV29NQlQuak9OZGpKSk9jMlNpRWd1R0NmV0Y4T2xzVlJrU3dpM...</msg>
+<var>${headers}</var>
+<arg>Authorization=${token}</arg>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.414770" elapsed="0.000531"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.416326" level="INFO">${data} = {'entry_date': '2025-04-17', 'mood': 'Happy', 'energy_level': '7', 'stress_level': '3', 'sleep_hours': '8', 'notes': 'Testimerkintä Robot Frameworkista', 'goals': 'Syödä terveellisemmin'}</msg>
+<var>${data}</var>
+<arg>entry_date=2025-04-17</arg>
+<arg>mood=Happy</arg>
+<arg>energy_level=7</arg>
+<arg>stress_level=3</arg>
+<arg>sleep_hours=8</arg>
+<arg>notes=Testimerkintä Robot Frameworkista</arg>
+<arg>goals=Syödä terveellisemmin</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.415636" elapsed="0.000745"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-04-17T19:20:22.445902" level="INFO">POST Request : url=http://127.0.0.1:3000/api/entries 
+ path_url=/api/entries 
+ headers={'User-Agent': 'python-requests/2.32.2', 'Accept-Encoding': 'gzip, deflate, br, zstd', 'Accept': '*/*', 'Connection': 'keep-alive', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6IngzNDUiLCJwYXNzd29yZCI6IiQyYSQxMCRhaVN5TzFCdW54YjZ1NEZVV29NQlQuak9OZGpKSk9jMlNpRWd1R0NmV0Y4T2xzVlJrU3dpMiIsImVtYWlsIjoieHhAZXhhbXBsZS5jb20iLCJjcmVhdGVkX2F0IjoiMjAyNS0wMy0wNFQxMToxMDo1NS4wMDBaIiwidXNlcl9sZXZlbCI6InJlZ3VsYXIiLCJpYXQiOjE3NDQ5MDY4MjIsImV4cCI6MTc0NDk5MzIyMn0.94ci0vw2fWFGyssSsvKPWyfRmxb3NcLj0qV0-U8q3gQ', 'Content-Type': 'application/json', 'Content-Length': '202'} 
+ body=b'{"entry_date": "2025-04-17", "mood": "Happy", "energy_level": "7", "stress_level": "3", "sleep_hours": "8", "notes": "Testimerkint\\u00e4 Robot Frameworkista", "goals": "Sy\\u00f6d\\u00e4 terveellisemmin"}' 
+ </msg>
+<msg time="2025-04-17T19:20:22.446022" level="INFO">POST Response : url=http://127.0.0.1:3000/api/entries 
+ status=201, reason=Created 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '26', 'ETag': 'W/"1a-XDNFNFrqeHHuclsYQ3uTbTzfT2A"', 'Date': 'Thu, 17 Apr 2025 16:20:22 GMT', 'Connection': 'keep-alive', 'Keep-Alive': 'timeout=5'} 
+ body={"message":"Entry added."} 
+ </msg>
+<msg time="2025-04-17T19:20:22.446216" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>api</arg>
+<arg>/entries</arg>
+<arg>headers=${headers}</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.420678" elapsed="0.025583"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.447326" level="INFO">Vastauksen status: 201</msg>
+<arg>Vastauksen status: ${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.446646" elapsed="0.000762"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-17T19:20:22.448480" level="INFO">Palautettu sisältö: {'message': 'Entry added.'}</msg>
+<arg>Palautettu sisältö: ${response.json()}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.447788" elapsed="0.000774"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2025-04-17T19:20:22.448962" elapsed="0.004592"/>
+</kw>
+<status status="PASS" start="2025-04-17T19:20:22.413975" elapsed="0.039990"/>
+</test>
+<status status="PASS" start="2025-04-17T19:20:21.996325" elapsed="0.458293"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Login-Test" id="s1" pass="1" fail="0" skip="0">Login-Test</stat>
+<stat name="Api-Test" id="s1" pass="2" fail="0" skip="0">Api-Test</stat>
 </suite>
 </statistics>
 <errors>

@@ -308,5 +308,10 @@ Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
 - [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
+
+# Tehtävä 7: Taustapalvelimen toimintaa testaminen
+
+
+
 ## Tekoälyn käyttö
 Tässä tehtävässä tekoälyä on käytetty virheiden tunnistamiseen, korjaamiseen ja dokumentaation luettavuuden parantamiseen.
