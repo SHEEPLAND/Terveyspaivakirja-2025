@@ -435,7 +435,7 @@ Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
 
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
 
-- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/report.html)
+- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 
 ## Tekoälyn käyttö
