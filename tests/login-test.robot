@@ -4,8 +4,9 @@ Library     CryptoLibrary        variable_decryption=True
 
 
 *** Variables ***
-${Username}    crypt:...    # 
-${Password}    crypt:...     # 
+${Username}    crypt:FyLvuZlCPtXFHuKUfwPYGK0rn/KEBN1MfNsIoN4tHBYPQD0kRngJ2O277OM/4ZAWHUmJD4an
+${Password}    crypt:FyLvuZlCPtXFHuKUfwPYGK0rn/KEBN1MfNsIoN4tHBYPQD0kRngJ2O277OM/4ZAWHUmJD4an
+
 ${Message}     Hello, Robot Framework!\nHow are you today?
 ${BaseUrl}     http://127.0.0.1:3001/Diary-FE-2025-main/vite-project/src/html
 
