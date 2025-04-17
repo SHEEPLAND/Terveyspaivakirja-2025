@@ -433,9 +433,9 @@ Lisää uusi merkintä tokenilla
 
 Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
 
-- [Testiloki (log.html)](https://sheepland.github.io/outputs/log.html)
+- [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
 
-- [Testiraportti (report.html)](https://sheepland.github.io/StressHelp-FE-2025/outputs/report.html)
+- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/report/log.html)
 
 
 ## Tekoälyn käyttö
