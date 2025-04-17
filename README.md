@@ -2,11 +2,12 @@
 
 Tässä tehtävässä kuvataan, kuinka asensin tarvittavat työkalut ja kirjastot terveyspäiväkirja-projektiin.
 
-Tämän tehtävän tavoitteena oli asentaa ja ottaa käyttöön Robot Framework ja siihen liittyvät lisäkirjastot seuraavien ohjeiden mukaisesti:   [GitHub: 01. Asennukset](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/01_asennukset.md)
+Tämän tehtävän tavoitteena oli asentaa ja ottaa käyttöön Robot Framework ja siihen liittyvät lisäkirjastot seuraavien ohjeiden mukaisesti:   
+🔗 [GitHub: 01. Asennukset](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/01_asennukset.md)
 
 ---
 
-## Asennetut työkalut
+## Asennetut työkalut 
 
 - **Robot Framework** – Testiautomaatioalusta  
 - **Browser Library** – Web-sovellusten testaukseen  
@@ -14,15 +15,22 @@ Tämän tehtävän tavoitteena oli asentaa ja ottaa käyttöön Robot Framework 
 - **CryptoLibrary** – Salaustestaukseen  
 - **Robotidy** – Koodiformatointiin  
 
-### Saatu tulos
+### Asennettu versiot tulos `pip freeze` -komennolla:
 
-![Asennustulokset](./Images/asennus.png)
+- robotframework==7.2.2
+- robotframework-assertion-engine==3.0.3
+- robotframework-browser==19.4.0
+- robotframework-crypto==0.4.2
+- robotframework-pythonlibcore==4.4.1
+- robotframework-requests==0.9.7
+- robotframework-tidy==4.16.0
 
 ---
 
 # Tehtävä 2: Kirjautumistesti
 
-Tässä tehtävässä automatisoin kirjautumistestin omalle terveyspäiväkirja-sovellukselleni käyttäen Robot Frameworkia ja Browser-kirjastoa. [GitHub: 02. Käyttöliittymän (GUI) testaus](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/02_gui_testaus.md)
+Tässä tehtävässä automatisoin kirjautumistestin omalle terveyspäiväkirja-sovellukselleni käyttäen Robot Frameworkia ja Browser-kirjastoa seuraavien ohjeiden mukaisesti:   
+🔗 [GitHub: 02. Käyttöliittymän (GUI) testaus](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/02_gui_testaus.md)
 
 ---
 
@@ -37,8 +45,15 @@ Tässä tehtävässä automatisoin kirjautumistestin omalle terveyspäiväkirja-
 ## Saatu tulos
 
 Testi suoritettu onnistuneesti. Alla on kuvankaappaus onnistuneesta testistä:
+<div style="border: 1px solid #ccc; padding: 12px; border-radius: 8px; background-color: #f9f9f9; max-width: 640px; margin-bottom: 1rem;">
 
-![Terveyspäiväkirja Login](./Images/Näyttökuva%202025-3-28%20kello%2021.50.39.png)
+  <img src="./Images/Näyttökuva%202025-3-28%20kello%2021.50.39.png" alt="Terveyspäiväkirja Login" style="max-width: 100%; border-radius: 4px;" />
+
+  <p style="text-align: center; font-style: italic; color: #666; margin-top: 8px;">
+    Kuva 1: Kirjautuminen
+  </p>
+
+</div>
 
 ---
 
@@ -79,7 +94,17 @@ Ohjeistus löytyi samasta oppaasta kuin Tehtävä 2: [GitHub: 02. GUI-testaus](h
 
 Testi suoritettu onnistuneesti. Alla kuvankaappaus:
 
-![Web-Form](./Images/Näyttökuva%202025-3-28%20kello%2021.52.53.png)
+<div style="border: 1px solid #ccc; padding: 12px; border-radius: 8px; background-color: #f9f9f9; max-width: 640px; margin-bottom: 1rem;">
+
+  <img src="./Images/Näyttökuva%202025-3-28%20kello%2021.52.53.png" alt="Terveyspäiväkirja Login" style="max-width: 100%; border-radius: 4px;" />
+
+  <p style="text-align: center; font-style: italic; color: #666; margin-top: 8px;">
+    Kuva 2: Web-Form
+  </p>
+
+</div>
+
+
 
 ---
 
@@ -117,7 +142,16 @@ Tässä tehtävässä automatisoitiin sovelluksen lomake, jolla käyttäjä lis�
 
 Testi meni läpi onnistuneesti ja yhteenvetopopup ilmestyi:
 
-![Päiväkirjamerkintä](./Images/Näyttökuva%202025-3-28%20kello%2022.13.33.png)
+<div style="border: 1px solid #ccc; padding: 12px; border-radius: 8px; background-color: #f9f9f9; max-width: 640px; margin-bottom: 1rem;">
+
+  <img src="./Images/Näyttökuva%202025-3-28%20kello%2022.13.33.png" alt="Terveyspäiväkirja Login" style="max-width: 100%; border-radius: 4px;" />
+
+  <p style="text-align: center; font-style: italic; color: #666; margin-top: 8px;">
+    Kuva 3: Päiväkirjamerkintä
+  </p>
+
+</div>
+
 
 ---
 
@@ -309,8 +343,99 @@ Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
 - [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 
-# Tehtävä 7: Taustapalvelimen toimintaa testaminen
+# Tehtävä 9: Taustapalvelimen toimintaa testaminen
 
+Tämän tehtävän tarkoituksena oli testata oman taustapalvelimen toimivuutta automaattisten testien avulla. Testauksessa käytettiin Robot Frameworkia ja omaa yksilöprojektin REST-rajapintaa. 
+
+Tehtävä suoritettiin seuraavien ohjeiden mukaisesti:  
+🔗 [GitHub: 05. Taustapalvelimen testaus](https://github.com/sakluk/projekti-terveyssovelluksen-kehitys/blob/main/ohjeet_testaus/05_taustapalvelimen_testaus.md)
+
+## Tavoitteet
+- Tavoitteena oli testata, että palvelin toimii oikein
+- Tarkistaa, että kirjautuminen ja tokenin käyttö onnistuvat
+-  Tarkistaa, että API perustoiminnot toimivat 
+
+## Kirjastot ja työkalut
+- **Robot Framework** - Testien automatisointi
+- **Requests Lbrary** - HTTP-pyyntöjen lähettäminen
+
+## Toteutus
+Testit kirjoitettiin tiedostoon `api-test.robot`ja testasivat seuraavia asioita:
+1. Kirjautuminen (POST /auth/login)
+2. Merkintöjen hakeminen (GET /entries)
+3. Uuden merkinnän lisääminen (POST /entries)
+
+```python
+*** Settings ***
+Library           RequestsLibrary
+Library           Collections
+
+Suite Setup       Kirjaudu ja tallenna token
+
+*** Variables ***
+${BASE_URL}       http://127.0.0.1:3000/api
+${USERNAME}       x345
+${PASSWORD}       salasana
+
+*** Keywords ***
+Kirjaudu ja tallenna token
+   
+    Create Session    api    ${BASE_URL}
+    ${payload}=    Create Dictionary    username=${USERNAME}    password=${PASSWORD}
+    ${response}=    POST On Session    api    /auth/login    json=${payload}
+    Should Be Equal As Integers    ${response.status_code}    200
+    ${json}=    Set Variable    ${response.json()}
+    ${token}=    Set Variable    Bearer ${json['token']}
+    Set Suite Variable    ${token}
+    Log    Token haettu ja tallennettu: ${token}
+
+*** Test Cases ***
+
+Hae kaikki merkinnät tokenilla
+    ${headers}=    Create Dictionary    Authorization=${token}
+    ${response}=    GET On Session    api    /entries    headers=${headers}
+    Status Should Be    200    ${response}
+    Log    Merkinnät: ${response.json()}
+
+Lisää uusi merkintä tokenilla    
+    ${headers}=    Create Dictionary
+    ...    Authorization=${token}
+    ...    Content-Type=application/json
+
+    ${data}=    Create Dictionary
+    ...    entry_date=2025-04-17
+    ...    mood=Happy
+    ...    energy_level=7
+    ...    stress_level=3
+    ...    sleep_hours=8
+    ...    notes=Testimerkintä Robot Frameworkista
+    ...    goals=Syödä terveellisemmin
+
+    ${response}=    POST On Session    api    /entries    headers=${headers}    json=${data}
+    Log    Vastauksen status: ${response.status_code}
+    Log    Palautettu sisältö: ${response.json()}
+    Status Should Be    201    ${response}
+
+```
+
+## Testin suorittamisen vaiheet
+1. Aktivoi virtuaaliympäristö
+    ```bash
+    source .venv/bin/activate
+    ```
+
+2. Suorita testit:
+    ```bash
+    robot -d outputs tests/api-test.robot
+    ```
+
+## Lopputulos
+
+Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
+
+- [Testiloki (log.html)](https://sheepland.github.io/outputs/log.html)
+
+- [Testiraportti (report.html)](https://sheepland.github.io/StressHelp-FE-2025/outputs/report.html)
 
 
 ## Tekoälyn käyttö
