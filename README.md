@@ -231,6 +231,7 @@ robot -d outputs tests/login-test.robot
 
 Testi suoritettu onnistuneesti. Käyttäjätunnus ja salasana haettiin `.env` -tiedostosta, eikä tietoja kirjoitettu suoraan testikoodiin..
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
+
 - [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 ## Käytetyt tiedostojen linkit
@@ -295,6 +296,7 @@ Testi suoritettu onnistuneesti.
   
 - [login-test.robot](https://github.com/SHEEPLAND/Terveyspaivakirja-2025/blob/main/tests/login-test.robot)
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
+
 - [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 # Tehtävä 7: Raportit ja lokitiedostot
@@ -325,6 +327,7 @@ Tamän komento:
 Testi suoritettu onnistuneesti ja kaikki tiedostot löytyyvät `outputs/` kansiosta.
 
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
+
 - [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 
@@ -355,8 +358,8 @@ Tehtävä suoritettiin seuraavien ohjeiden mukaisesti:
 Testiraportit näkyvät julkisesti GitHub Pages -sivulla:
 
 - [Testiloki (log.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/log.html)
-- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
+- [Testiraportti (report.html)](https://sheepland.github.io/Terveyspaivakirja-2025/outputs/report.html)
 
 # Tehtävä 9: Taustapalvelimen toimintaa testaminen
 

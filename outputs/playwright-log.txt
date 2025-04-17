@@ -70,3 +70,5 @@
 {"level":30,"time":"2025-04-17T19:09:14.326Z","pid":9102,"hostname":"MACBOOK.local","msg":"Strict mode is enabled, find Locator with id=message in page."}
 {"level":30,"time":"2025-04-17T19:09:14.375Z","pid":9102,"hostname":"MACBOOK.local","msg":"Retrieved text for element id=message containing Received!"}
 {"level":30,"time":"2025-04-17T19:09:14.375Z","pid":9102,"hostname":"MACBOOK.local","msg":"End of node method getText"}
+{"level":30,"time":"2025-04-17T19:29:05.615Z","pid":9102,"hostname":"MACBOOK.local","msg":"Removed page=51345a18-735a-4ad5-aedc-06d0c0e6c850 from context=4aeaa48a-b677-4afb-ac1d-cb1509d55056 page stack"}
+{"level":30,"time":"2025-04-17T19:29:05.628Z","pid":9102,"hostname":"MACBOOK.local","msg":"Removed page=e2bb1ce8-40a5-42a9-8d6f-91e6719050b8 from context=4aeaa48a-b677-4afb-ac1d-cb1509d55056 page stack"}
